@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="text-center m-4">
+        <h2>Gestión de Productos</h2>
+    </div>
+
+    <table class="table table-hover table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (product of productsList; track product.id) {
+            <tr>
+                <th scope="row">{{ product.id }}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.stock}}</td>
+                <td class="text-center">
+                    <div>
+                        <!-- <button (click)="editProduct(product.id)" class="btn btn-primary me-2">Editar</button> -->
+                        <a class="btn btn-primary me-2" href="/editar/{{product.id}}">Editar</a>
+                        <button (click)="delete(product.id)" class="btn btn-danger">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+            } 
+        </tbody>
+    </table>
+</div>
