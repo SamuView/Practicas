@@ -1,41 +1,35 @@
-<div class="container">
-    <div class="text-center m-4">
-        <h2>Gestión de Productos</h2>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2>Gestión de Productos <i class="bi bi-basket"></i></h2>
     </div>
-
     <table class="table table-hover table-striped align-middle">
         <thead class="table-dark">
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
                 <th scope="col">Stock</th>
-                <th></th>
+                <th class="text-center" scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <!-- 
-                Bucle para poder mostrar los datos de cada producto de la BBDD
-            -->
+            <!-- Datos de productos -->
             @for (product of productsList; track product.id) {
             <tr>
                 <th scope="row">{{ product.id }}</th>
-                <td>{{product.name}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.stock}}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price}}<i class="bi bi-currency-euro"></i></td>
+                <td>{{ product.stock }}</td>
                 <td class="text-center">
-                    <div>
-                        <!-- <button (click)="editProduct(product.id)" class="btn btn-primary me-2">Editar</button> -->
-                        <!-- Este es un enlace que redirige a editProduct -->
-                        <a class="btn btn-primary me-2" href="/editar/{{product.id}}">Editar</a>
-                        <!-- Cuando haga click en el boton eliminar se  ejecuta la funcion delete() del listProductComponent  -->
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary me-2" href="/editar/{{product.id}}">Editar <i class="bi bi-box-arrow-in-up-right"></i></a>
                         <button (click)="delete(product.id)" class="btn btn-danger">Eliminar</button>
                     </div>
                 </td>
             </tr>
-            } 
+            }
         </tbody>
     </table>
 </div>
