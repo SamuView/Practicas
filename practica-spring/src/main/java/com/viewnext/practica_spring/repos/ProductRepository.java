@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.viewnext.practica_spring.models.Product;
 
+// Repositorio para la entidad Product
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 

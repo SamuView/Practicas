@@ -7,23 +7,30 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+// Clase que representa la entidad Product en la base de datos
 @Entity
 @Table(name = "products")
 public class Product {
 	
+	// Atributos de la entidad Product
+	// id: identificador único del producto autogenerativo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	// name: nombre del producto
 	@Column
 	private String name;
 	
+	// description: descripción del producto
 	@Column
 	private String description;
 	
+	// price: precio del producto
 	@Column
 	private Double price;
 	
+	// stock: cantidad de producto disponible en stock
 	@Column
 	private int stock;
 
