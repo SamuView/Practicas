@@ -15,6 +15,9 @@
             </tr>
         </thead>
         <tbody>
+            <!-- 
+                Bucle para poder mostrar los datos de cada producto de la BBDD
+            -->
             @for (product of productsList; track product.id) {
             <tr>
                 <th scope="row">{{ product.id }}</th>
@@ -25,7 +28,9 @@
                 <td class="text-center">
                     <div>
                         <!-- <button (click)="editProduct(product.id)" class="btn btn-primary me-2">Editar</button> -->
+                        <!-- Este es un enlace que redirige a editProduct -->
                         <a class="btn btn-primary me-2" href="/editar/{{product.id}}">Editar</a>
+                        <!-- Cuando haga click en el boton eliminar se  ejecuta la funcion delete() del listProductComponent  -->
                         <button (click)="delete(product.id)" class="btn btn-danger">Eliminar</button>
                     </div>
                 </td>
