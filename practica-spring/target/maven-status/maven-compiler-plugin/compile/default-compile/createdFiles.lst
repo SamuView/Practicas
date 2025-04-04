@@ -1,0 +1,5 @@
+com\viewnext\practica_spring\SwaggerConfig.class
+com\viewnext\practica_spring\models\Product.class
+com\viewnext\practica_spring\App.class
+com\viewnext\practica_spring\repos\ProductRepository.class
+com\viewnext\practica_spring\controllers\ProductController.class
